@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-top: 70px;
+
+  &__link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #2c2c2c;
+    background: #f9f9f9;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    transition: 0.5s background, 0.5s color;
+    &:hover,
+    &-active {
+      background: #000;
+      color: #fff;
+    }
+  }
+}

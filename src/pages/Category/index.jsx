@@ -6,14 +6,14 @@ import Navbar from "../../components/Navbar";
 import Product from "../../components/Product";
 import Container from "../../layout/Container";
 
-import classes from './Category.module.scss'
+import classes from "./Category.module.scss";
 
 const Category = () => {
   const { type } = useParams();
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}?category=${type}`);
+      const res = await fetch(`${process.env.REACT_APP_API}?category=${type}`);
       const card = await res.json();
       setData(card);
     };

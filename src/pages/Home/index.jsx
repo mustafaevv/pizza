@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import Product from "../../components/Product";
@@ -9,7 +10,7 @@ const Home = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}`);
+      const res = await fetch(`${process.env.REACT_APP_API}`);
       const cards = await res.json();
       setData(cards);
     };

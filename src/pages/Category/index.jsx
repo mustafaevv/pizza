@@ -13,7 +13,7 @@ const Category = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}pizzas?category=${type}`);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}?category=${type}`);
       const card = await res.json();
       setData(card);
     };

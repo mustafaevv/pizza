@@ -9,7 +9,7 @@ const Home = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/pizzas`);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}`);
       const cards = await res.json();
       setData(cards);
     };

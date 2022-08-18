@@ -4,21 +4,14 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import Product from "../../components/Product";
+import useGetData from "../../hooks/useGetData";
 import Container from "../../layout/Container";
 
 import classes from "./Category.module.scss";
 
 const Category = () => {
   const { type } = useParams();
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(`${process.env.REACT_APP_API}?category=${type}`);
-      const card = await res.json();
-      setData(card);
-    };
-    fetchData();
-  }, [type]);
+  const [data] = useGetData(`?category=${type}`);
   return (
     <>
       <Container>
